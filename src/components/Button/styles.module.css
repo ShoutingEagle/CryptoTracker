@@ -1,0 +1,31 @@
+@import url('../../App.css');
+
+.btn-nrml,.btn-outl{
+    padding: 1em 2em;
+    border-radius: 2em;
+}
+
+
+.btn-nrml{
+    background-color: var(--primary-text-landing-pagg);
+    transition: 500ms ease-in-out;
+    color: var(--font-dark-theme);
+}
+
+.btn-outl{
+    border: 1px solid var(--primary-text-landing-pagg);
+    transition: 300ms ease-in-out;
+}
+
+
+.btn-nrml:hover{
+    box-shadow: 0.1em 0.1em 1em var(--primary-text-landing-pagg);
+    
+}
+
+.btn-outl:hover{
+    background-color:var(--primary-text-landing-pagg);
+    color: var(--font-dark-theme);
+}
+
+

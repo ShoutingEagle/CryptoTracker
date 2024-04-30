@@ -1,0 +1,25 @@
+@import '../../../App.css';
+
+.coin_details{
+    background-color: var(--background-light-highlight);
+    margin: 3em;
+    border-radius: 0.5em;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: justify;
+}
+
+.coin_details p{
+color: var(--font-light-theme);
+}
+
+.coin_details p a{
+    color: var(--a-tag);
+}
+
+.name{
+    font-size: 1.5em;
+    font-weight: 700;
+}

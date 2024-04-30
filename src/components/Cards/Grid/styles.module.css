@@ -1,0 +1,103 @@
+@import '../../../App.css';
+
+.grid_card_link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.grid_card{
+    margin-top: 3em;
+    padding: 0 3em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+   
+}
+
+.grid_card_ctr{
+    width:18em;
+    height: 18em;
+    border-radius: 0.8em;
+    background-color: var(--background-light-highlight);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    cursor: pointer;
+}
+
+img{
+    width: 3em;
+}
+
+.box_1{
+    display: flex;
+    gap: 0.8em;
+}
+
+.name_bold{
+    font-weight: 700;
+}
+
+.nm{
+    font-size: 0.9em;
+}
+
+.box_3{
+    display: flex;
+    gap: 1em;
+}
+
+.box_3_1{
+    width: fit-content;
+    padding: 0.5em 0.8em;
+    border-radius: 1.5em;
+    font-weight: 500;
+}
+
+.box_3_2{
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0.5em;
+}
+
+.box_4{
+    border: none !important;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.box_5, .box_6{
+    font-size: 0.8rem;
+}
+
+.up_trend{
+    border:2px solid var(--profit-clr);
+    color: var(--profit-clr);
+}
+
+.up_trend:hover{
+    background-color:var(--profit-clr) ;
+    color: var(--font-light-theme );
+}
+
+.down_trend{
+    border:2px solid var(--loss-clr);
+    color: var(--loss-clr);
+}
+
+.down_trend:hover{
+    background-color:var(--loss-clr) ;
+    color: var(--font-light-theme );
+}
+
+.up_trend_price{
+    color: var(--profit-clr);
+}
+
+.down_trend_price{
+    color: var(--loss-clr);
+}

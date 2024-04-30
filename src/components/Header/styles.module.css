@@ -1,0 +1,84 @@
+@import url('../../App.css');
+
+
+
+nav{
+    position: sticky;
+    top: 0;
+    background-color: var(--background-light-theme);
+    color: var(--font-light-theme);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 999;
+}
+
+.drawer{
+    display: none; 
+}
+
+.navLinkCustomStyle{
+    color: var(--background-dark-theme);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.rt{
+    color: var(--background-dark-theme);
+    text-decoration: none;
+}
+
+.navLinkCustomStyle div span{
+    color: var(--primary-text-landing-pagg);
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* nav ul li:last-child{
+    padding: 0.8rem 2rem;
+    border-radius: 1.8rem;
+    background-color: var(--primary-text-landing-pagg);
+    color: var(--font-dark-theme);
+} */
+
+nav ul li{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;   
+    transition: 0.18s ease-in-out;
+}
+
+
+
+nav ul li a:hover{
+    color: var(--onhover);
+}
+
+
+
+
+
+
+
+/* media queries */
+
+
+@media only screen and (max-width : 800px) {
+
+    nav ul{
+        display: none;
+    }
+
+    .drawer{
+        display: block; 
+    }
+
+}

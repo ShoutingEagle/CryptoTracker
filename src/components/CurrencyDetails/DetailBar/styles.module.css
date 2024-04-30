@@ -1,0 +1,69 @@
+@import '../../../App.css';
+
+.detail_bar{
+    background-color: var(--background-light-highlight);
+    margin: 2em 3em;
+    padding: 1em 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5em;
+}
+
+.name_symbol{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    align-items: center;
+}
+
+.name_bold{
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.trend{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+
+.trend span:first-child{
+    padding: 0.5em 1em;
+    border-radius: 1.5em;
+}
+
+.trend_icn {
+    padding: 0.2em 0.3em;
+    border-radius: 50%;
+}
+
+.up_trend{
+    border:2px solid var(--profit-clr);
+    color: var(--profit-clr);
+}
+
+.up_trend:hover{
+    background-color:var(--profit-clr) ;
+    color: var(--font-light-theme );
+}
+
+.down_trend{
+    border:2px solid var(--loss-clr);
+    color: var(--loss-clr);
+}
+
+.down_trend:hover{
+    background-color:var(--loss-clr) ;
+    color: var(--font-light-theme );
+}
+
+.up_trend_price{
+    color: var(--profit-clr);
+}
+
+.down_trend_price{
+    color: var(--loss-clr);
+}

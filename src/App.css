@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+
+
+
+:root{
+    --background-dark-theme : #111;
+    --background-light-highlight : #F3F3F3;
+    --background-light-theme : #FFFFFF;
+    --font-dark-theme : #FFFFFF;
+    --font-light-theme : #0F172A;
+    --border-dark-theme : #212D3B;
+    --border-light-theme : #EFF2F5;
+    --primary-text-landing-pagg : #3a80e9;
+    --other-clr : #1b1b1b;
+    --border-clr : #888;
+    --profit-clr : #61c96f;
+    --loss-clr : #f94141;
+    --a-tag : rgb(0, 0, 255);
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+    background-color: var(--background-light-theme);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+[data-theme='dark'] {
+    --background-dark-theme : #0D1217;
+    --font-dark-theme : #DFE5EC;
+    --border-dark-theme : #212D3B;
 }
 
-.App-link {
-  color: #61dafb;
+[data-theme='light'] {
+    --background-light-theme : #FFFFFF;
+    --font-light-theme : #0F172A;
+    --border-light-theme : #EFF2F5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+::selection{
+    background-color:var(--primary-text-landing-pagg) ;
+    color: var(--background-light-theme);
 }
+
+::-webkit-scrollbar{
+    display: none;
+    /* width: 0.52rem; */
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--primary-text-landing-pagg);
+    border-radius:3rem;
+}
+
+
+
+
+
+
+
+
+/* @media only screen and (max-width : 800px) {
+
+    html{
+        font-size: 88%;
+      }
+
+} */

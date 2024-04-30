@@ -1,0 +1,23 @@
+@import '../../App.css';
+
+
+
+
+.goTopHidden {
+    display: none;
+}
+
+.goTop{
+    position: fixed;
+    border: 1px solid grey;
+    padding: 0.5rem;
+    z-index: 999;
+    bottom: 3em;
+    right: 3em;
+}
+
+.goTop:hover{
+    cursor: pointer;
+    background-color: var(--primary-text-landing-pagg);
+    color: var(--font-dark-theme);
+}

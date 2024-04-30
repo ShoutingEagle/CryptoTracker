@@ -1,0 +1,93 @@
+@import url('../../../App.css');
+
+.grid_card_link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.list_view{
+    width: 100vw;
+}
+
+
+
+table{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.single_card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1em 0.5em;
+    cursor: pointer;
+    border-radius: 0.5em;
+}
+
+.single_card:hover{
+    background-color: var(--background-light-highlight);
+}
+
+
+td{
+    text-align: left;
+    width: 18%;
+}   
+
+
+
+.name_symbol{
+    width: 6em;
+}
+
+.trend{
+    width: 6em;
+}
+
+.trend span{
+    padding: 0.5em 1em;
+    border-radius: 1.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.trend_icn {
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.up_trend{
+    border:2px solid var(--profit-clr);
+    color: var(--profit-clr);
+}
+
+.up_trend:hover{
+    background-color:var(--profit-clr) ;
+    color: var(--font-light-theme );
+}
+
+.down_trend{
+    border:2px solid var(--loss-clr);
+    color: var(--loss-clr);
+}
+
+.down_trend:hover{
+    background-color:var(--loss-clr) ;
+    color: var(--font-light-theme );
+}
+
+.up_trend_price{
+    color: var(--profit-clr);
+}
+
+.down_trend_price{
+    color: var(--loss-clr);
+}

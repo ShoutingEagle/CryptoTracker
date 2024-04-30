@@ -1,0 +1,27 @@
+@import '../../App.css';
+
+
+.chart{
+    background-color: var(--background-light-highlight);
+    margin: 2em 3em;
+    padding: 1em 3em;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.dropdown_cnt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.dropdown_cnt:first-child{
+    font-weight: 700;
+}
+
+.toggle_cnt{
+    text-align: center;
+}

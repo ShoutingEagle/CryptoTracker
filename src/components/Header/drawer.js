@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -16,7 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 
 export default function AnchorTemporaryDrawer() {
-  const [state, setState] = React.useState(false);
+  const [state, setState] = useState(false);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

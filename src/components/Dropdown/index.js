@@ -14,7 +14,7 @@ export default function Dropdown({state, setState}) {
 
   return (
     <div className={styles.dropdown}>
-      <FormControl fullWidth>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-label">Days</InputLabel>
         <Select
           labelId="demo-simple-select-label"

@@ -14,7 +14,7 @@ function Header() {
               <ul>
               <NavLink className={styles.rt}><li>Theme</li></NavLink>
               <NavLink className={styles.rt} to='/'><li>Home</li></NavLink>
-              <NavLink className={styles.rt}><li>Compare</li></NavLink>
+              <NavLink className={styles.rt} to='compare'><li>Compare</li></NavLink>
               <NavLink className={styles.rt} to='dashboard'> 
               <li><Button classname='btn-nrml' textContent='Dashboard'/></li></NavLink>
               </ul>

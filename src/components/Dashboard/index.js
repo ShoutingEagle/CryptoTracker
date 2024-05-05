@@ -4,35 +4,42 @@ import LabTabs from './LabTabs.js'
 import axios from 'axios';
 import Loader from '../Loader/index.js';
 import BackToTop from '../BackToTop/index.js';
-
+import { fetchedCryptoData } from '../../functions/fetchCryptoData.js';
+import  ErrorPage  from '../ErrorPage';
 
 
 
 function Dashboard() {
-  
+  const [loading,setLoading] = useState(true)
+  const [data,setData] = useState([])
+  console.log(data)
 
-  const [fetchedData,setFetchedData] = useState({
-    loading : true,
-    data : [],
-    error : ''
-  });
+
 
   useEffect(() => {
-    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en')
-    .then((response) => setFetchedData({loading: false,data:response.data,error:''}))
-    .catch((error) => setFetchedData({loading: false,data:[],error:error.message}))
+    getData()
   },[])
+
+  async function getData () {
+    const coinData = await fetchedCryptoData()
+    if(coinData.length>0){
+      setData(coinData)
+      setLoading(false)
+    }
+    
+  }
   
 
   return (
     <div className={styles.dashboard}>
       {
-        fetchedData.loading?(<Loader/>):(
-        <>
+        loading?(<Loader/>):(
+        data.length>0 ? (<>
         <input type='text' placeholder='Search'/>
-        <LabTabs coinsList={fetchedData.data}/>
+        <LabTabs coinsList={data}/>
         <BackToTop/>
-        </>
+        </>) : (<ErrorPage data={data}/>)
+        
         )
       }
       

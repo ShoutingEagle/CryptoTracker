@@ -9,9 +9,9 @@ import { filterFetchedData } from '../../functions/filterData'
 import { fetchedSingleCoinData } from '../../functions/fetchingSingleCoinData'
 import { fetchedGraphData } from '../../functions/fetchingDataForGraph'
 import Chart from '../Chart'
-import {extractData} from '../../functions/extractDatefromObject.js'
 import Dropdown from '../Dropdown/index.js'
 import Toggle from '../Toggle/index.js'
+import {setChartData} from '../../functions/setChartData.js'
 
 
 function Details() {
@@ -19,41 +19,36 @@ function Details() {
   const [isLoading,setIsLoading] = useState(true)
   const [coinDetails,setCoinDetails] = useState()
   const [days,setDays] = useState(30)
-  const [chartData,setChartData] = useState({})
-  const [toggle, setToggle] = useState('prices');
+  const [chartDataState,setChartDataState] = useState({})
+  const [toggleState, setToggleState] = useState('prices')
+  const [isLoadingGraph,setIsLoadingGraph] = useState(true) 
 
   useEffect(() => {
     if(id) {
       fetchData()
     }
-  },[id,days,toggle])
+  },[id])
 
   async function fetchData() {
     const singleCoinData = await fetchedSingleCoinData(id)
     if(singleCoinData){
       filterFetchedData(setCoinDetails,singleCoinData)
-      const graphData = await fetchedGraphData(id,days)
-      if(graphData){
-        
-        setChartData({
-          labels: graphData[toggle].map((item) => {
-            return extractData(item[0])
-          }),
-          datasets: [
-            {
-            data: graphData[toggle].map((item) => item[1]),
-            borderColor: '#3a80e9',
-            borderWidth : 2,
-            fill : true,
-            tension : 0.25,
-            backgroundColor : 'rgba(58,128,233,0.1)',
-            pointRadius : 0
-            },
-          ],
-        })
-        setIsLoading(false)
-      }
+      setIsLoading(false)
     }
+  }
+
+
+  useEffect(() => {
+    fetchGraphDataForChart();
+  },[days,toggleState])
+
+
+  async function fetchGraphDataForChart () {
+    const graphData = await fetchedGraphData(id,days,toggleState)
+      if(graphData.length>0){
+          setChartData(setChartDataState,graphData,false,id,false)
+          setIsLoadingGraph(false)
+      }
   }
 
   return (
@@ -68,12 +63,12 @@ function Details() {
               <Dropdown state={days} setState={setDays}/>
             </span>
             <span className={styles.toggle_cnt}>
-              <Toggle state={toggle} setState={setToggle}/>
+              <Toggle state={toggleState} setState={setToggleState}/>
             </span>
-            <Chart chartData={chartData}/>
+            {isLoadingGraph?<Loader/>:<Chart chartData={chartDataState} multiAxis={false}/>}
           </div>
           
-          <CoinDetail coins={coinDetails}/>
+          <CoinDetail coins={coinDetails} multiaxis/>
       </div>
       }
 

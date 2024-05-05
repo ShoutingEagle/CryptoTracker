@@ -4,7 +4,6 @@ import styles from './styles.module.css';
 
 function BackToTop() {
   const [scrollPosition,setScrollPosition] = useState(false)
-  console.log(scrollPosition)
   useEffect(() => {
     const handleScroll = () => {
       if(window.scrollY>50){

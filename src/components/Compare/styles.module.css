@@ -24,3 +24,30 @@
     flex-direction: column;
     gap: 1.5em;
 }
+
+
+@media screen and (max-width : 850px) {
+    .coinDetail{
+        display: flex;
+        justify-content: center;
+    }
+
+    .selectors{
+        justify-content: center;
+    }
+}
+
+
+
+@media screen and (max-width : 605px) {
+    .coinDetail{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selectors{
+        flex-direction: column;
+    }
+
+    
+}

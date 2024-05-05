@@ -8,7 +8,7 @@ import {NavLink} from 'react-router-dom'
 
 function LandingPage() {
   return (
-    <main>
+    <main className={styles.ldn_pg}>
         <div className={styles.content} >
             <div className={styles.prm_text}> 
               <motion.p className={styles.txt_stk}  

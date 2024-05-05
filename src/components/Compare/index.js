@@ -28,7 +28,7 @@ function Compare() {
   const [coinDetail1,setCoinDetail1] = useState()
   const [coinDetail2,setCoinDetail2] = useState()
   const [toggle,setToggle] = useState('prices')
-  const [chartDataState,setChartDataState] = useState()
+  const [chartDataState,setChartDataState] = useState(null)
   const [days,setDays] = useState(30)
   console.log(chartDataState);
   console.log(chartDataState instanceof Object)
@@ -102,11 +102,13 @@ function Compare() {
       const graphDataCurrency2 = await fetchedGraphData(coinId2,days,toggle)
       console.log(graphDataCurrency1,graphDataCurrency2)
       if(Array.isArray(graphDataCurrency1) && Array.isArray(graphDataCurrency2)){ 
+        console.log('inside if block')
         setChartData(setChartDataState,graphDataCurrency1,graphDataCurrency2,coinId1,coinId2)
         setLoadingCryptoGraphData(false)
       }
       else{
-        setChartData('Chart Data cannot be obtained');
+        console.log('inside else block')
+        setChartDataState('Chart Data cannot be obtained');
         setLoadingCryptoGraphData(false)
       }
   }
@@ -159,17 +161,14 @@ function Compare() {
               <div className={styles.chart}>
                 {
                 loadingCryptoGraphData ?(<Loader/>):(
-
-                chartDataState ? (
+                chartDataState.labels ? (
                 <>
                 <Toggle state={toggle} setState={setToggle}/>
                 <Chart chartData={chartDataState}  multiAxis={true} toggleState={toggle}/>
                 </>
                 ):(
                 <ErrorPage data={chartDataState}/>
-                ) 
-                
-                )}
+                ))}
                 
               </div>
 

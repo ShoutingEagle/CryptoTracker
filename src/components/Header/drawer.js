@@ -13,6 +13,8 @@ import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import MenuIcon from '@mui/icons-material/Menu';
+import {NavLink} from 'react-router-dom'
+import styles from './styles.module.css'
 
 
 export default function AnchorTemporaryDrawer() {
@@ -34,7 +36,8 @@ export default function AnchorTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
         <List>
-              <ListItem disablePadding>
+          <NavLink className={styles.rt} to='/'>
+            <ListItem disablePadding>
                 <ListItemButton>
                     <ListItemIcon>
                         <HomeIcon/>
@@ -42,24 +45,34 @@ export default function AnchorTemporaryDrawer() {
                     <ListItemText primary='Home'/>
                 </ListItemButton>
             </ListItem>
+          </NavLink>
 
+
+          <NavLink className={styles.rt} to='compare'>
             <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <CompareArrowsIcon/>
-              </ListItemIcon>
-              <ListItemText primary='Compare' />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon/>
-              </ListItemIcon>
-              <ListItemText primary='Dashboard' />
-            </ListItemButton>
-          </ListItem>
-        </List>
+              <ListItemButton>
+                <ListItemIcon>
+                  <CompareArrowsIcon/>
+                </ListItemIcon>
+                <ListItemText primary='Compare' />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
+
+            
+
+          <NavLink className={styles.rt} to='dashboard'>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <DashboardIcon/>
+                </ListItemIcon>
+                <ListItemText primary='Dashboard' />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
+            
+          </List>
       <List>
 
           

@@ -22,8 +22,12 @@ function Dashboard() {
 
   async function getData () {
     const coinData = await fetchedCryptoData()
-    if(coinData.length>0){
+    if(Array.isArray(coinData)){
       setData(coinData)
+      setLoading(false)
+    }
+    else{
+      setData('Fetching Error !')
       setLoading(false)
     }
     
@@ -34,11 +38,11 @@ function Dashboard() {
     <div className={styles.dashboard}>
       {
         loading?(<Loader/>):(
-        data.length>0 ? (<>
+        data instanceof String  ? (<ErrorPage data={data}/>) : (<>
         <input type='text' placeholder='Search'/>
         <LabTabs coinsList={data}/>
         <BackToTop/>
-        </>) : (<ErrorPage data={data}/>)
+        </>) 
         
         )
       }

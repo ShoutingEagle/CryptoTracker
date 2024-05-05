@@ -1,6 +1,4 @@
 import axios from "axios";
-import ErrorPage from '../components/ErrorPage'
-
 
 
 export const fetchedCryptoData = () => {
